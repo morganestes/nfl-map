@@ -23,7 +23,7 @@ html, body {
     width: 100%;
     height: 100%;
 }
-h1 {
+.team-name {
     color: forestgreen;
     font-size: 1.5em;
     font-family: 'Century Gothic', Tahoma, Verdana, sans-serif;
@@ -1072,19 +1072,20 @@ $(function() {
         });
 
     var createMapMarkers = function( objMarkers ) {
-            for ( var i in objMarkers ) {
-                if( objMarkers.hasOwnProperty(i) ) {
-                    var team = objMarkers[i];
-                    console.log( team );
+        for ( var i in objMarkers ) {
+            if( objMarkers.hasOwnProperty(i) ) {
+                var team = objMarkers[i];
 
-                    $.goMap.createMarker({
-                        address: team.city,
-                        title: team.name,
-                        html: "<span class='team-name'>" + team.name + "</span>"
-                    });
-                }
+                console.log( team );
+
+                $.goMap.createMarker({
+                    address: team.city,
+                    title: team.name,
+                    html: "<span class='team-name'>" + team.name + "</span>"
+                });
             }
-        };
+        }
+    };
 
     createMapMarkers( teams );
 
