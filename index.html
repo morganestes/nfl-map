@@ -33,12 +33,9 @@ html, body {
 
 <body>
 <div id="map"></div>
-
-
 <!-- Perhaps the eyebrow-raisingest part of the whole shebang:
   The goMap jQuery plugin's code is plopped down right in the middle of my own code -->
-<script type="text/javascript">
-
+<script>
 (function($) {
     var geocoder = new google.maps.Geocoder();
 
@@ -157,9 +154,7 @@ html, body {
                 if (opts.markers[0].address)
                     this.geocode({address: opts.markers[0].address, center: true});
                 else
-                    this.centerLatLng = new google.maps.LatLng(opts.markers[0].latitude,
-
-opts.markers[0].longitude);
+                    this.centerLatLng = new google.maps.LatLng(opts.markers[0].latitude, opts.markers[0].longitude);
             }
             else
                 this.centerLatLng = new google.maps.LatLng(opts.latitude, opts.longitude);
@@ -170,16 +165,12 @@ opts.markers[0].longitude);
                 mapTypeControl:         opts.mapTypeControl,
                 streetViewControl:      opts.streetViewControl,
                 mapTypeControlOptions:  {
-                    position:   google.maps.ControlPosition [opts.mapTypeControlOptions.position.toUpperCase()],
+                    position:   google.maps.ControlPosition[opts.mapTypeControlOptions.position.toUpperCase()],
                     style:      google.maps.MapTypeControlStyle[opts.mapTypeControlOptions.style.toUpperCase()]
                 },
-                mapTypeId:              google.maps.MapTypeId [opts.maptype.toUpperCase()],
+                mapTypeId:              google.maps.MapTypeId[opts.maptype.toUpperCase()],
                 navigationControl:      opts.navigationControl, navigationControlOptions: {
-                    position:   google.maps.ControlPosition
-
-[opts.navigationControlOptions.position.toUpperCase()], style:      google.maps.NavigationControlStyle
-
-[opts.navigationControlOptions.style.toUpperCase()]
+                    position:   google.maps.ControlPosition[opts.navigationControlOptions.position.toUpperCase()], style:      google.maps.NavigationControlStyle[opts.navigationControlOptions.style.toUpperCase()]
                 },
                 scaleControl:           opts.scaleControl,
                 scrollwheel:            opts.scrollwheel,
