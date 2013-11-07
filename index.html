@@ -922,53 +922,77 @@ $(function() {
     I feel the NFL is the Packers and 31 other teams.
     */
     var teams = {
-        gb: {
-            city: 'Green Bay, WI',
-            name: 'Green Bay Packers'
+        atl: {
+            city: 'Atlanta, GA',
+            name: 'Atlanta Falcons'
         },
-        sf: {
-            city: 'San Francisco, CA',
-            name: 'San Francisco 49ers'
-        },
-        cin: {
-            city: 'Cincinnati, OH',
-            name: 'Cincinnati Bengals'
-        },
-        bal: {
-            city: 'Baltimore, MD',
-            name: 'Baltimore Ravens'
-        },
-        min: {
-            city: 'Minneapolis, MN',
-            name: 'Minnesota Vikings'
-        },
-        det: {
-            city: 'Detroit, MI',
-            name: 'Detroit Lions'
-        },
-        dal: {
-            city: 'Dallas, TX',
-            name: 'Dallas Cowboys'
+        buf: {
+            city: 'Buffalo, NY',
+            name: 'Buffalo Bills'
         },
         chi: {
             city: 'Chicago, IL',
             name: 'Chicago Bears'
         },
+        cin: {
+            city: 'Cincinnati, OH',
+            name: 'Cincinnati Bengals'
+        },
+        cle: {
+            city: 'Cleveland, OH',
+            name: 'Cleveland Browns'
+        },
+        dal: {
+            city: 'Dallas, TX',
+            name: 'Dallas Cowboys'
+        },
+        den: {
+            city: 'Denver, CO',
+            name: 'Denver Broncos'
+        },
+        det: {
+            city: 'Detroit, MI',
+            name: 'Detroit Lions'
+        },
+        gb: {
+            city: 'Green Bay, WI',
+            name: 'Green Bay Packers'
+        },
+        ten: {
+            city: 'Nashville, TN',
+            name: 'Tennessee Titans'
+        },
+        ind: {
+            city: 'Indianopolis, IN',
+            name: 'Indianapolis Colts'
+        },
+        kc: {
+            city: 'Kansas City, KS',
+            name: 'Kansas City Chiefs'
+        },
+        oak: {
+            city: 'Oakland, CA',
+            name: 'Oakland Raiders'
+        },
+        stl: {
+            city: 'St. Louis, MO',
+            name: 'St. Louis Rams'
+        },
         mia: {
             city: 'Miami, FL',
             name: 'Miami Dolphins'
         },
-        tb: {
-            city: 'Tampa Bay, FL',
-            name: 'Tampa Bay Buccaneers'
+        min: {
+            city: 'Minneapolis, MN',
+            name: 'Minnesota Vikings'
         },
-        jac: {
-            city: 'Jacksonville, FL',
-            name: 'Jacksonville Jaguars'
+        ne: {
+            city: 'Foxborough, MA',
+            name: 'New England Patriots'
         },
-        hou: {
-            city: 'Houston, TX',
-            name: 'Houston Texans'
+        no: {
+            city: 'New Orleans, LA',
+            name: 'New Orleans Saints'
         },
         nyg: {
             city: 'East Rutherford, NJ',
@@ -978,65 +1002,9 @@ $(function() {
             city: 'East Rutherford, NJ',
             name: 'New York Giants & New York Jets'
         },
-        buf: {
-            city: 'Buffalo, NY',
-            name: 'Buffalo Bills'
-        },
-        oak: {
-            city: 'Oakland, CA',
-            name: 'Oakland Raiders'
-        },
-        sea: {
-            city: 'Seattle, WA',
-            name: 'Seattle Seahawks'
-        },
-        ne: {
-            city: 'Foxborough, MA',
-            name: 'New England Patriots'
-        },
-        atl: {
-            city: 'Atlanta, GA',
-            name: 'Atlanta Falcons'
-        },
-        cle: {
-            city: 'Cleveland, OH',
-            name: 'Cleveland Browns'
-        },
-        car: {
-            city: 'Charlotte, NC',
-            name: 'Carolina Panthers'
-        },
-        ten: {
-            city: 'Nashville, TN',
-            name: 'Tennessee Titans'
-        },
-        stl: {
-            city: 'St. Louis, MO',
-            name: 'St. Louis Rams'
-        },
-        kc: {
-            city: 'Kansas City, KS',
-            name: 'Kansas City Chiefs'
-        },
-        den: {
-            city: 'Denver, CO',
-            name: 'Denver Broncos'
-        },
-        ind: {
-            city: 'Indianopolis, IN',
-            name: 'Indianapolis Colts'
-        },
         phi: {
             city: 'Philadelphia, PA',
             name: 'Philadelphia Eagles'
-        },
-        sd: {
-            city: 'San Diego, CA',
-            name: 'San Diego Chargers'
-        },
-        no: {
-            city: 'New Orleans, LA',
-            name: 'New Orleans Saints'
         },
         ari: {
             city: 'Glendale, AZ',
@@ -1045,6 +1013,42 @@ $(function() {
         pit: {
             city: 'Pittsburgh, PA',
             name: 'Pittsburgh Steelers'
+        },
+        sd: {
+            city: 'San Diego, CA',
+            name: 'San Diego Chargers'
+        },
+        sf: {
+            city: 'San Francisco, CA',
+            name: 'San Francisco 49ers'
+        },
+        sea: {
+            city: 'Seattle, WA',
+            name: 'Seattle Seahawks'
+        },
+        tb: {
+            city: 'Tampa Bay, FL',
+            name: 'Tampa Bay Buccaneers'
+        },
+        wsh: {
+            city: 'Washington, D.C.',
+            name: 'Washington Redskins'
+        },
+        car: {
+            city: 'Charlotte, NC',
+            name: 'Carolina Panthers'
+        },
+        jac: {
+            city: 'Jacksonville, FL',
+            name: 'Jacksonville Jaguars'
+        },
+        bal: {
+            city: 'Baltimore, MD',
+            name: 'Baltimore Ravens'
+        },
+        hou: {
+            city: 'Houston, TX',
+            name: 'Houston Texans'
         }
     };
 
