@@ -920,9 +920,11 @@ opts.markers[0].longitude);
     }
 })(jQuery);
 
-<!-- Whew! Finally back to my own code. Here's the jQuery "ready" handler,
-where I set up the map to show the entire USA and as little as possible of anything else,
-by means of the latitude, longitude, and zoom properties. -->
+/*
+Whew! Finally back to my own code. Here's the jQuery "ready" handler,
+where I set up the map to show the entire USA and as little as possible of
+anything else, by means of the latitude, longitude, and zoom properties.
+*/
 
 $(function() {
 
@@ -934,11 +936,15 @@ $("#map").goMap({
     });
 
 
-<!-- Finally, all of the pushpin-creating code; address sets the pushpin (you can also set longitude
-and latitude, if you know those values (it will probably be a little more "performant"
-as the cocked hats are wont to say). The "html" property is the fun part, where you can add
-any HTML you want (pictures, etc.) Here I just have it show the name of the team that plays at the location
-of the pushpin (or teams, in one instance). A little Bucky Dent-esque, I feel the NFL is the Packers and 31 other teams. -->
+/*
+Finally, all of the pushpin-creating code; address sets the pushpin
+(you can also set longitude and latitude, if you know those values
+(it will probably be a little more "performant" as the cocked hats are wont to say).
+The "html" property is the fun part, where you can add any HTML you want
+(pictures, etc.) Here I just have it show the name of the team that plays at the
+location of the pushpin (or teams, in one instance). A little Bucky Dent-esque,
+I feel the NFL is the Packers and 31 other teams.
+*/
 
 $.goMap.createMarker({
 address: 'Green Bay, Wisconsin',
