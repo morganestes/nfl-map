@@ -928,209 +928,165 @@ anything else, by means of the latitude, longitude, and zoom properties.
 
 $(function() {
 
-$("#map").goMap({
-        latitude: 36.75,
-        longitude: -100,
-        maptype: 'ROADMAP',
-        zoom: 5
-    });
+    /*
+    Finally, all of the pushpin-creating code; address sets the pushpin
+    (you can also set longitude and latitude, if you know those values
+    (it will probably be a little more "performant" as the cocked hats are wont to say).
+    The "html" property is the fun part, where you can add any HTML you want
+    (pictures, etc.) Here I just have it show the name of the team that plays at the
+    location of the pushpin (or teams, in one instance). A little Bucky Dent-esque,
+    I feel the NFL is the Packers and 31 other teams.
+    */
+    var teams = {
+        packers: {
+            city: 'Green Bay, WI',
+            name: 'Green Bay Packers'
+        },
+        niners: {
+            city: 'San Francisco, CA',
+            name: 'San Francisco 49ers'
+        },
+        bengals: {
+            city: 'Cincinnati, OH',
+            name: 'Cincinnati Bengals'
+        },
+        ravens: {
+            city: 'Baltimore, MD',
+            name: 'Baltimore Ravens'
+        },
+        vikings: {
+            city: 'Minneapolis, MN',
+            name: 'Minnesota Vikings'
+        },
+        lions: {
+            city: 'Detroit, MI',
+            name: 'Detroit Lions'
+        },
+        cowboys: {
+            city: 'Dallas, TX',
+            name: 'Dallas Cowboys'
+        },
+        bears: {
+            city: 'Chicago, IL',
+            name: 'Chicago Bears'
+        },
+        dolphins: {
+            city: 'Miami, FL',
+            name: 'Miami Dolphins'
+        },
+        bucs: {
+            city: 'Tampa Bay, FL',
+            name: 'Tampa Bay Buccaneers'
+        },
+        jags: {
+            city: 'Jacksonville, FL',
+            name: 'Jacksonville Jaguars'
+        },
+        texans: {
+            city: 'Houston, TX',
+            name: 'Houston Texans'
+        },
+        giants: {
+            city: 'East Rutherford, NJ',
+            name: 'New York Giants & New York Jets'
+        },
+        jets: {
+            city: 'East Rutherford, NJ',
+            name: 'New York Giants & New York Jets'
+        },
+        bills: {
+            city: 'Buffalo, NY',
+            name: 'Buffalo Bills'
+        },
+        raiders: {
+            city: 'Oakland, CA',
+            name: 'Oakland Raiders'
+        },
+        seahawks: {
+            city: 'Seattle, WA',
+            name: 'Seattle Seahawks'
+        },
+        pats: {
+            city: 'Foxborough, MA',
+            name: 'New England Patriots'
+        },
+        falcons: {
+            city: 'Atlanta, GA',
+            name: 'Atlanta Falcons'
+        },
+        browns: {
+            city: 'Cleveland, OH',
+            name: 'Cleveland Browns'
+        },
+        panthers: {
+            city: 'Charlotte, NC',
+            name: 'Carolina Panthers'
+        },
+        titans: {
+            city: 'Nashville, TN',
+            name: 'Tennessee Titans'
+        },
+        rams: {
+            city: 'St. Louis, MO',
+            name: 'St. Louis Rams'
+        },
+        chiefs: {
+            city: 'Kansas City, KS',
+            name: 'Kansas City Chiefs'
+        },
+        broncos: {
+            city: 'Denver, CO',
+            name: 'Denver Broncos'
+        },
+        colts: {
+            city: 'Indianopolis, IN',
+            name: 'Indianapolis Colts'
+        },
+        eagles: {
+            city: 'Philadelphia, PA',
+            name: 'Philadelphia Eagles'
+        },
+        chargers: {
+            city: 'San Diego, CA',
+            name: 'San Diego Chargers'
+        },
+        saints: {
+            city: 'New Orleans, LA',
+            name: 'New Orleans Saints'
+        },
+        cards: {
+            city: 'Glendale, AZ',
+            name: 'Arizona Cardinals'
+        },
+        steelers: {
+            city: 'Pittsburgh, PA',
+            name: 'Pittsburgh Steelers'
+        }
+    };
 
+    $("#map").goMap({
+            latitude: 36.75,
+            longitude: -100,
+            maptype: 'ROADMAP',
+            zoom: 5
+        });
 
-/*
-Finally, all of the pushpin-creating code; address sets the pushpin
-(you can also set longitude and latitude, if you know those values
-(it will probably be a little more "performant" as the cocked hats are wont to say).
-The "html" property is the fun part, where you can add any HTML you want
-(pictures, etc.) Here I just have it show the name of the team that plays at the
-location of the pushpin (or teams, in one instance). A little Bucky Dent-esque,
-I feel the NFL is the Packers and 31 other teams.
-*/
+    var createMapMarkers = function( objMarkers ) {
+            for ( var i in objMarkers ) {
+                if( objMarkers.hasOwnProperty(i) ) {
+                    var team = objMarkers[i];
+                    console.log( team );
 
-$.goMap.createMarker({
-address: 'Green Bay, Wisconsin',
-title: 'Green Bay Packers',
-html: '<h1>Green Bay Packers</h1>'
-});
+                    $.goMap.createMarker({
+                        address: team.city,
+                        title: team.name,
+                        html: "<span class='team-name'>" + team.name + "</span>"
+                    });
+                }
+            }
+        };
 
-$.goMap.createMarker({
-address: 'San Francisco, California',
-title: 'San Francisco 49ers',
-html: '<h1>San Francisco 49ers</h1>'
-});
-
-$.goMap.createMarker({
-address: 'Cincinnati, Ohio',
-title: 'Cincinnati Bengals',
-html: '<h1>Cincinnati Bengals</h1>'
-});
-
-$.goMap.createMarker({
-address: 'Baltimore, Maryland',
-title: 'Baltimore Ravens',
-html: '<h1>Baltimore Ravens</h1>'
-});
-
-$.goMap.createMarker({
-address: 'Minneapolis, Minnesota',
-title: 'Minnesota Vikings',
-html: '<h1>Minnesota Vikings</h1>'
-});
-
-$.goMap.createMarker({
-address: 'Detroit, Michigan',
-title: 'Detroit Lions',
-html: '<h1>Detroit Lions</h1>'
-});
-
-$.goMap.createMarker({
-address: 'Dallas, Texas',
-title: 'Dallas Cowboys',
-html: '<h1>Dallas Cowboys</h1>'
-});
-
-$.goMap.createMarker({
-address: 'Chicago, Illinois',
-title: 'Chicago Bears',
-html: '<h1>Chicago Bears</h1>'
-});
-
-$.goMap.createMarker({
-address: 'Miami, FL',
-title: 'Miami Dolphins',
-html: '<h1>Miami Dolphins</h1>'
-});
-
-$.goMap.createMarker({
-address: 'Tampa Bay, FL',
-title: 'Tampa Bay Buccaneers',
-html: '<h1>Tampa Bay Buccaneers</h1>'
-});
-
-$.goMap.createMarker({
-address: 'Jacksonville, FL',
-title: 'Jacksonville Jaguars',
-html: '<h1>Jacksonville Jaguars</h1>'
-});
-
-$.goMap.createMarker({
-address: 'Houston, TX',
-title: 'Houston Texans',
-html: '<h1>Houston Texans</h1>'
-});
-
-$.goMap.createMarker({
-address: 'East Rutherford, NY',
-title: 'New York Giants and New York Jets',
-html: '<h2>New York Giants</h2></br><h2>New York Jets</h2>'
-});
-
-$.goMap.createMarker({
-address: 'Buffalo, NY',
-title: 'Buffalo Bills',
-html: '<h1>Buffalo Bills</h1>'
-});
-
-$.goMap.createMarker({
-address: 'Oakland, CA',
-title: 'Oakland Raiders',
-html: '<h1>Oakland Raiders</h1>'
-});
-
-$.goMap.createMarker({
-address: 'Seattle, WA',
-title: 'Seattle Seahawks',
-html: '<h1>Seattle Seahawks</h1>'
-});
-
-$.goMap.createMarker({
-address: 'Washington, D.C.',
-title: 'Washington Lobbyists',
-html: '<h1>Washington Lobbyists</h1>'
-});
-
-$.goMap.createMarker({
-address: 'Foxborough, MA',
-title: 'New England Patriots',
-html: '<h1>New England Patriots</h1>'
-});
-
-$.goMap.createMarker({
-address: 'Atlanta, GA',
-title: 'Atlanta Falcons',
-html: '<h1>Atlanta Falcons</h1>'
-});
-
-$.goMap.createMarker({
-address: 'Cleveland, OH',
-title: 'Cleveland Browns',
-html: '<h1>Cleveland Browns</h1>'
-});
-
-$.goMap.createMarker({
-address: 'Charlotte, North Carolina',
-title: 'Carolina Panthers',
-html: '<h1>Carolina Panthers</h1>'
-});
-
-$.goMap.createMarker({
-address: 'Nashville, TN',
-title: 'Tennessee Titans',
-html: '<h1>Tennessee Titans</h1>'
-});
-
-$.goMap.createMarker({
-address: 'St. Louis, MO',
-title: 'St. Louis Rams',
-html: '<h1>St. Louis Rams</h1>'
-});
-
-$.goMap.createMarker({
-address: 'Kansas City, KS',
-title: 'Kansas City Chiefs',
-html: '<h1>Kansas City Chiefs</h1>'
-});
-
-$.goMap.createMarker({
-address: 'Denver, CO',
-title: 'Denver Broncos',
-html: '<h1>Denver Broncos</h1>'
-});
-
-$.goMap.createMarker({
-address: 'Indianopolis, IN',
-title: 'Indianapolis Colts',
-html: '<h1>Indianapolis Colts</h1>'
-});
-
-$.goMap.createMarker({
-address: 'Philadelphia, PA',
-title: 'Philadelphia Eagles',
-html: '<h1>Philadelphia Eagles</h1>'
-});
-
-$.goMap.createMarker({
-address: 'San Diego, CA',
-title: 'San Diego Chargers',
-html: '<h1>San Diego Chargers</h1>'
-});
-
-$.goMap.createMarker({
-address: 'New Orleans, LA',
-title: 'New Orleans Saints',
-html: '<h1>New Orleans Saints</h1>'
-});
-
-$.goMap.createMarker({
-address: 'Glendale, AZ',
-title: 'Arizona Cardinals',
-html: '<h1>Arizona Cardinals</h1>'
-});
-
-$.goMap.createMarker({
-address: 'Pittsburgh, PA',
-title: 'Pittsburgh Steelers',
-html: '<h1>Pittsburgh Steelers</h1>'
-});
+    createMapMarkers( teams );
 
 });
 </script>
